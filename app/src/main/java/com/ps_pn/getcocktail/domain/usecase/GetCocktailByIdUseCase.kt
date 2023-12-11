@@ -5,5 +5,5 @@ import javax.inject.Inject
 
 class GetCocktailByIdUseCase @Inject constructor(private val repository: CocktailRepository) {
 
-    operator fun invoke(id: String) = repository.getById(id)
+    suspend operator fun invoke(id: String) = repository.getById(id)
 }
