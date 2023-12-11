@@ -1,13 +1,20 @@
 package com.ps_pn.getcocktail.domain.repository
 
-import com.ps_pn.getcocktail.domain.entity.CocktailModel
+import com.ps_pn.getcocktail.domain.entity.MainCocktailModel
 
 interface CocktailRepository {
 
-    fun getById(id:String):CocktailModel
+    suspend fun getById(id:String):MainCocktailModel
 
-    fun getResultForSearch(search:String):List<CocktailModel>
+    suspend fun getResultForSearch(search:String):List<MainCocktailModel>
 
-    fun getRandomCocktail():CocktailModel
+    suspend fun getRandomCocktail():MainCocktailModel
+
+    fun getFavouriteCocktailsList():List<MainCocktailModel>
+    fun getFavouriteCocktailById(id:String):MainCocktailModel
+    fun addFavouriteCocktail(cocktail:MainCocktailModel)
+    fun removeFavouriteCocktailById(id:String)
+
+
 
 }

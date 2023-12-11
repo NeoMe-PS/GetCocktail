@@ -1,8 +1,13 @@
-package com.ps_pn.getcocktail.domain.entity
+package com.ps_pn.getcocktail.data.db.model
 
-data class CocktailModel (
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-    var idDrink: String? = null,
+
+@Entity(tableName = "favourite_cocktails")
+data class DbCocktailModel (
+    @PrimaryKey
+    var idDrink: String,
     var strDrink: String? = null,
     var strCategory: String? = null,
     var strAlcoholic: String? = null,
@@ -40,4 +45,5 @@ data class CocktailModel (
     var strMeasure12: String? = null,
     var strMeasure13: String? = null,
     var strMeasure14: String? = null,
-    var strMeasure15: String? = null)
+    var strMeasure15: String? = null
+)
